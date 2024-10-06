@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    /*Login*/
+    .ax-login{
+        @apply bg-[rgb(41,52,65)] lg:bg-[linear-gradient(110deg,_rgba(41,52,65,1)_0%,_rgba(88,112,141,1)_50%,_rgba(255,255,255,1)_50%,_rgba(252,252,252,1)_100%)] dark:lg:bg-[linear-gradient(110deg,_rgba(41,52,65,1)_0%,_rgba(88,112,141,1)_50%,_rgba(41,52,65,1)_50%,_rgba(41,52,65,1)_100%)];
+    }
+
+    .ax-login-form label,
+    .ax-login-form span,
+    .ax-login-form a{
+        @apply text-gray-200 lg:text-gray-700 dark:text-gray-500;
+    }
+
+}

@@ -15,22 +15,22 @@ return [
 
     'sets' => [
 
-        // 'default' => [
-        //
-        //     /*
-        //     |-----------------------------------------------------------------
-        //     | Icons Path
-        //     |-----------------------------------------------------------------
-        //     |
-        //     | Provide the relative path from your app root to your SVG icons
-        //     | directory. Icons are loaded recursively so there's no need to
-        //     | list every sub-directory.
-        //     |
-        //     | Relative to the disk root when the disk option is set.
-        //     |
-        //     */
-        //
-        //     'path' => 'resources/svg',
+        'default' => [
+
+            /*
+            |-----------------------------------------------------------------
+            | Icons Path
+            |-----------------------------------------------------------------
+            |
+            | Provide the relative path from your app root to your SVG icons
+            | directory. Icons are loaded recursively so there's no need to
+            | list every sub-directory.
+            |
+            | Relative to the disk root when the disk option is set.
+            |
+            */
+
+               'path' => 'resources/svg',
         //
         //     /*
         //     |-----------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
         //     |
         //     */
         //
-        //     'prefix' => 'icon',
+             'prefix' => 'icon',
         //
         //     /*
         //     |-----------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
         //         // 'height' => 50,
         //     ],
         //
-        // ],
+        ],
 
     ],
 

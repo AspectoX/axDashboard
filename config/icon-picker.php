@@ -35,7 +35,7 @@ return [
     | with breakpoints (default, sm, md, lg, xl, 2xl) as the key.
     |
     */
-    'columns' => 1,
+    'columns' => 5,
 //     example:
 //    'columns' => [
 //        'default' => 1,
