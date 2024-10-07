@@ -43,7 +43,7 @@
 >
     <div class="overflow-x-clip">
         <header
-            class="fi-sidebar-header flex h-16 items-center bg-white px-6 ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10 lg:shadow-sm"
+            class="flex items-center h-16 px-6 bg-white fi-sidebar-header ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10 lg:shadow-sm"
         >
             <div
                 @if (filament()->isSidebarCollapsibleOnDesktop())
@@ -90,15 +90,15 @@
                     x-data="{}"
                     x-on:click="$store.sidebar.close()"
                     x-show="$store.sidebar.isOpen"
-                    class="ms-auto hidden lg:flex"
+                    class="hidden ms-auto lg:flex"
                 />
             @endif
         </header>
     </div>
 
     <nav
-        class="fi-sidebar-nav flex-grow flex flex-col gap-y-7 overflow-y-auto overflow-x-hidden px-6 py-8"
-        style="scrollbar-gutter: stable"
+        class="flex flex-col flex-grow px-6 py-8 overflow-x-hidden overflow-y-auto fi-sidebar-nav gap-y-7"
+        style=""
     >
         {{ \Filament\Support\Facades\FilamentView::renderHook(\Filament\View\PanelsRenderHook::SIDEBAR_NAV_START) }}
 
@@ -116,7 +116,7 @@
             </div>
         @endif
 
-        <ul class="fi-sidebar-nav-groups -mx-2 flex flex-col gap-y-7">
+        <ul class="flex flex-col -mx-2 fi-sidebar-nav-groups gap-y-7">
             @foreach ($navigation as $group)
                 <x-filament-panels::sidebar.group
                     :active="$group->isActive()"

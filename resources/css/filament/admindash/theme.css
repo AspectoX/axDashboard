@@ -2,188 +2,48 @@
 
 @config 'tailwind.config.js';
 
+
+/* Claro = #dfe4ec Medio = #202938 Oscuro = #111828 */
+
 @layer components {
     .fi-body{
-        @apply bg-[#293441] dark:bg-transparent text-black/75 dark:text-white/75 !important;
+        @apply bg-[#dfe4ec] text-black/75 dark:text-white/75 !important;
     }
-
-    .fi-layout{
-        @apply bg-transparent !important;
-    }
-
-    /*Topbar*/
     .fi-topbar>nav,
-    .fi-sidebar{
-        @apply bg-[#293441] !important;
+    aside.fi-sidebar{
+        @apply bg-[#111828] shadow-lg !important;
     }
-
-    .fi-icon-btn{
-        @apply pl-5 !important;
-    }
-    .fi-btn-icon{
-        @apply text-white/70 !important;
-    }
-
-    /*Main*/
-    .fi-main{
-        @apply max-w-full bg-white/90 dark:bg-[#293441]/80 px-0 md:px-0 lg:px-0 !important;
-    }
-    .fi-page{
-        @apply mt-0 !important;
-    }
-    .main-content{
-        @apply mx-4 mb-4 !important;
-    }
-
-    .fi-page>section{
-        @apply pt-0;
-    }
-    .fi-header{
-        @apply max-w-full bg-[#293441]/[0.12] dark:bg-gray-800 shadow-md px-4 py-2 !important;
-    }
-    .fi-header-heading{
-        @apply text-2xl !important;
-    }
-    .fi-topbar-database-notifications-btn{
-        @apply mr-0 w-12 pr-0 !important;
-    }
-    .fi-icon-btn-badge-ctn{
-        @apply left-12 top-[.60rem] !important;
-    }
-
-    /*Card*/
-    .fi-ta, .fi-form, .fi-section{
-        @apply border border-slate-200 shadow-lg rounded-xl !important;  /*dark:bg-[#293441]/[2]*/
-    }
-    .fi-form{
-        @apply border-0 shadow-none rounded-none bg-transparent p-0 pb-8 !important;
-    }
-    .fi-section{
-        @apply dark:bg-transparent rounded-xl !important;
-    }
-    .fi-section-header{
-        @apply dark:bg-black/[0.2] rounded-xl !important;
-    }
-    .fi-ta-ctn{
-        @apply rounded-xl dark:bg-[#293441]/[2] !important;
-    }
-    .fi-section-content-ctn{
-        @apply dark:bg-[#293441]/[2] rounded-xl !important;
-    }
-    .fi-input-wrp{
-        @apply border !important;
-    }
-
-    .fi-ta-ctn,
-    .fi-ta-content,
-    table.fi-ta-table,
-    table.fi-ta-table>thead,
-    table.fi-ta-table>tbody{
-        @apply divide-gray-300 !important;
-    }
-    .fi-ta-row{
-        @apply hover:bg-black/[0.06] !important;
-    }
-
-    /*Sidebar*/
     .fi-sidebar-header{
-        @apply bg-transparent !important;
-    }
-    .fi-sidebar-nav {
-        @apply text-white/75 mx-0 px-0 pt-4 gap-0 shadow-lg !important;
+        @apply bg-[#111828] !important;
     }
     .fi-sidebar-nav{
-        scrollbar-gutter: unset!important;
+        @apply px-0 py-6 overflow-auto !important;
+        scrollbar-gutter:auto;
     }
-
-    /*Sidebar profile*/
-    .nav-profile-left{
-        @apply table-cell align-top pr-2.5 !important;
-    }
-    .nav-profile-right{
-        @apply table-cell align-top pr-2.5 !important;
-    }
-    .profile-photo img{
-        @apply max-w-[30px] h-8 rounded-full mt-1 !important;
-    }
-
-    /*sidebar nav group*/
     .fi-sidebar-nav-groups{
-        @apply px-0 mx-0 min-w-full gap-y-0 !important;
+        @apply -mx-0 !important;
+    }
+    .fi-sidebar-group{
     }
     .fi-sidebar-item-button{
-        @apply rounded-none bg-transparent !important;
-    }
-    .fi-sidebar-item{
-        @apply hover:bg-white/10 !important;
-    }
-    .fi-sidebar-item.fi-active{
-        @apply bg-black/20 !important;
-    }
-    .fi-sidebar-item-label,
-    .fi-sidebar-item-icon{
-        @apply h-[18px] text-white/80 text-xs font-normal !important;
-    }
-    .fi-sidebar-group-button{
-        @apply bg-white/5 mt-4 uppercase !important;
-    }
-    .fi-sidebar-group-button>.fi-sidebar-group-label{
-        @apply text-xs !important;
-    }
-    .fi-sidebar-group-label{
-        @apply text-white/80 !important;
-    }
-    .fi-sidebar-group-collapse-button{
-        @apply text-white/80 rounded-none mx-2 p-0 !important;
+        @apply px-4 rounded-none !important;
     }
 
 
-    /*Button*/
-    /* .fi-btn.fi-btn-color-primary,.bg-custom-600{
-        @apply bg-[#293441]/[.70] hover:bg-[#293441]/[.60] !important;
-    } */
-    .fi-btn.ax-btn-save,
-    .fi-btn.ax-btn-save-changes,
-    .fi-btn.ax-btn-create{
-        @apply bg-green-800 hover:bg-green-600 !important;
+    .fi-main{
+        @apply mx-0 px-0 md:px-0 lg:px-0 max-w-full !important;
     }
-    .fi-btn.ax-btn-cancel{
-        @apply bg-yellow-600 hover:bg-yellow-500 !important;
+    .fi-page{
+        @apply px-0 !important;
     }
-    .fi-btn.ax-btn-delete{
-        @apply bg-red-800 hover:bg-red-600 !important;
+    .fi-page>section{
+        @apply pt-0 !important;
+    }
+    .fi-header{
+        @apply bg-[#2f3b51] px-4 py-2 !important;
     }
 
-    .fi-btn.ax-btn-new-source,
-    .fi-btn.ax-btn-new-author,
-    .fi-btn.ax-btn-new-article,
-    .fi-btn.ax-btn-new-user,
-    .fi-btn.ax-btn-new-category{
-        @apply bg-indigo-600 hover:bg-indigo-500 !important;
+    .main-content{
+        @apply px-4 !important;
     }
-    .fi-btn.ax-btn-create-create-another{
-        @apply bg-teal-600 hover:bg-teal-500 !important;
-    }
-    .fi-link.fi-color-btn-blue{
-        @apply text-blue-400 hover:text-blue-300 !important;
-    }
-
-    .fi-link>span{
-        @apply hidden !important;
-    }
-
-    /* formularios */
-    .fi-fo-component-ctn{
-        /* @apply max-w-full lg:grid-cols-1 !important; */
-    }
-
-    .introtext{
-        @apply h-32 !important;
-    }
-    .fulltext{
-        @apply h-128 !important;
-    }
-
-
-
 }
