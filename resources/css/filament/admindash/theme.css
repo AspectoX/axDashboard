@@ -7,14 +7,14 @@
 
 @layer components {
     .fi-body{
-        @apply bg-[#dfe4ec] text-black/75 dark:text-white/75 !important;
+        @apply bg-[#dfe4ec] dark:bg-[#111828] text-black/75 dark:text-white/75 !important;
+    }
+    aside.fi-sidebar{
+        @apply bg-[#172036] shadow-xl !important;
     }
     .fi-topbar>nav,
-    aside.fi-sidebar{
-        @apply bg-[#111828] shadow-lg !important;
-    }
     .fi-sidebar-header{
-        @apply bg-[#111828] !important;
+        @apply bg-[#202938] !important;
     }
     .fi-sidebar-nav{
         @apply px-0 py-6 overflow-auto !important;
