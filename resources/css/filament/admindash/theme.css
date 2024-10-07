@@ -10,11 +10,14 @@
         @apply bg-[#dfe4ec] dark:bg-[#111828] text-black/75 dark:text-white/75 !important;
     }
     aside.fi-sidebar{
-        @apply bg-[#172036] shadow-xl !important;
+        @apply bg-[#172036] dark:bg-[#172036] shadow-md !important;
     }
     .fi-topbar>nav,
     .fi-sidebar-header{
-        @apply bg-[#202938] !important;
+        @apply bg-[#202938] dark:bg-[#202938] !important;
+    }
+    .fi-topbar>nav{
+        @apply shadow-none ring-0 ring-transparent !important;
     }
     .fi-sidebar-nav{
         @apply px-0 py-6 overflow-auto !important;
@@ -25,8 +28,15 @@
     }
     .fi-sidebar-group{
     }
-    .fi-sidebar-item-button{
-        @apply px-4 rounded-none !important;
+    .fi-sidebar-item>.fi-sidebar-item-button{
+        @apply px-4 rounded-none bg-[#202938] dark:bg-[#202938] hover:bg-[#202938]/10 hover:dark:bg-[#202938]/10 !important;
+    }
+    .fi-sidebar-item>.fi-sidebar-item-button>.fi-sidebar-item-label,
+    .fi-sidebar-item>.fi-sidebar-item-button>.fi-sidebar-item-icon{
+        @apply text-white/40 dark:text-white/40 !important;
+    }
+    .fi-sidebar-item.fi-active>.fi-sidebar-item-button{
+        @apply bg-white/5 dark:bg-white/5 hover:bg-white/10 hover:dark:bg-white/10 !important;
     }
 
 
@@ -40,10 +50,37 @@
         @apply pt-0 !important;
     }
     .fi-header{
-        @apply bg-[#2f3b51] px-4 py-2 !important;
+        @apply bg-[#202938] dark:bg-[#202938] border-t border-white/20 px-4 py-2 shadow-md !important;
+    }
+    .fi-header>div>h1{
+        @apply text-white/50 dark:text-white/50 !important;
     }
 
     .main-content{
-        @apply px-4 !important;
+        @apply p-6 bg-white dark:bg-[#111828] !important;
+    }
+
+    .fi-section{
+        @apply bg-gray-200 dark:bg-[#202938]/50 shadow-md !important;
+    }
+
+    .fi-simple-main{
+        @apply rounded-none ring-0 sm:rounded-none sm:max-w-full sm:p-0 !important;
+    }
+    .fi-page>section{
+        @apply gap-y-0 !important;
+    }
+    .fi-page>section>div{
+        @apply bg-gray-200 !important;
+    }
+    .ax-header{
+        @apply w-full bg-[#202938] justify-end !important;
+    }
+    .ax-header>div{
+        @apply max-w-full block my-4 mx-8 !important;
+    }
+    .ax-form-admin,
+    form>.ax-form-admin{
+        @apply bg-gray-800 dark:bg-gray-800 !important;
     }
 }
