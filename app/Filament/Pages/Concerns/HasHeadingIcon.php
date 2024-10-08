@@ -35,7 +35,7 @@ trait HasHeadingIcon
         $iconStyle = "{$color} {$margin} {$dimensions}";
 
         $iconComponent = filled($icon)
-            ? '<x-'. $icon .' style="'. $iconStyle .'" class="inline text-custom-600" />'
+            ? '<x-'. $icon .' style="'. $iconStyle .'" class="inline ax-heading-icon" />'
             : null;
 
         $headingText = $heading ?? $this->heading ?? $this->getTitle();

@@ -41,7 +41,7 @@
             >
                 @if ($heading instanceof \Illuminate\Contracts\Support\Htmlable)
                     <x-slot name="heading">
-                        {{ $heading }}
+                        {!! $heading !!}
                     </x-slot>
                 @endif
 

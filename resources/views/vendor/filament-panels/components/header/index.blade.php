@@ -19,7 +19,7 @@
         <h1
             class="text-2xl font-bold tracking-tight fi-header-heading text-gray-950 dark:text-white sm:text-3xl"
         >
-            {{ $heading }}
+            {!! $heading !!}
         </h1>
 
         @if ($subheading)

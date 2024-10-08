@@ -13,7 +13,7 @@
         <h1
             class="text-2xl font-bold tracking-tight text-center fi-simple-header-heading text-gray-950 dark:text-white"
         >
-            {{ $heading }}
+            {!! $heading !!}
         </h1>
     @endif
 
