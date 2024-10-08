@@ -1,5 +1,5 @@
 <div class="relative ms-3">
-    <x-dropdown align="right" width="48">
+    <x-dropdown align="right" width="48" contentClasses="ax-dropdown">
         <x-slot name="trigger">
             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                 <button class="flex text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
@@ -41,7 +41,6 @@
             <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}" x-data>
                 @csrf
-
                 <x-dropdown-link href="{{ route('logout') }}"
                             @click.prevent="$root.submit();">
                     {{ __('Log Out') }}
