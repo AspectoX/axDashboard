@@ -12,7 +12,7 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name','slug','description','color','images','status'
+        'name','slug','status','description','color','images'
     ];
 
     public function article():HasMany{

@@ -40,6 +40,12 @@ class ArticleResource extends Resource
     protected static ?string $navigationIcon = 'icon-edit';
     protected static ?int $navigationSort = 5;
 
+    protected static array $statuses =[
+        'Draft' => 'Draft',
+        'Published' => 'Published',
+        'Deleted' => 'Deleted',
+    ];
+
     // public static function getGloballySearchableAttributes(): array
     // {
     //     return ['title','introtext','fulltext'];
@@ -70,7 +76,7 @@ class ArticleResource extends Resource
                         ->columnSpan(2)
                         ->extraAttributes(['class' => 'author_id']),
                     Select::make('status')
-                        ->options(['Draft','Published','Deleted'])
+                        ->options(self::$statuses)
                         ->columnSpan(2)
                         ->extraAttributes(['class' => 'status']),
                     Toggle::make('features')

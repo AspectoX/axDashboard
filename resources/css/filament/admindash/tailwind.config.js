@@ -11,6 +11,13 @@ export default {
         './vendor/awcodes/filament-curator/resources/**/*.blade.php',
     ],
     theme: {
+        colors: {
+            'axDark': '#312E81',
+            'axDark-light': '#45428D',
+            'axMedium': '#818cf8',
+            'axNormal': '#A5B4FC',
+            'axLight': '#E0E7FF',
+        },
         screens: {
             sm: '480px',
             md: '768px',

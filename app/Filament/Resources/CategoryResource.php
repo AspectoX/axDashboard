@@ -39,6 +39,11 @@ class CategoryResource extends Resource
     protected static ?string $recordTitleAttribute = 'name';
     protected static ?int $navigationSort = 2;
 
+    protected static array $statuses =[
+        'Draft' => 'Draft',
+        'Published' => 'Published',
+        'Deleted' => 'Deleted',
+    ];
     public static function form(Form $form): Form
     {
         return $form
@@ -58,16 +63,19 @@ class CategoryResource extends Resource
                             $set('slug', Str::slug($state));
                         })
                         ->maxLength(150),
-                    Select::make('status')
-                        ->options(['Draft','Published','Deleted']),
-                    Hidden::make('slug')
+                    TextInput::make('slug')
+                        //->disabled()
                         ->required(),
-                        // ->disabled()
-                        //->maxLength(150),
-                    IconPicker::make('images'),
+                    Select::make('status')
+                        ->options(self::$statuses)
+                        ->required(),
+                    IconPicker::make('images')
+                        ->nullable(),
                     ColorPicker::make('color')
+                        ->nullable()
                         ->rgba(),
                     Textarea::make('description')
+                        ->nullable()
                         ->columnSpanFull(),
                 ])->columns(2),
             ]);
@@ -78,8 +86,8 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->searchable()
-                    ->description(fn (Category $record): string => $record->description),
+                    ->searchable(),
+                    //->description(fn (Category $record): string => $record->description),
                 ColorColumn::make('color')
                     ->copyable()
                     ->copyMessage('Color code copied')

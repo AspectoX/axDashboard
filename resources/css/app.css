@@ -27,6 +27,9 @@
     .ax-login-form a{
         @apply text-gray-200 lg:text-gray-700 dark:text-gray-500;
     }
+    .ax-login-form button{
+        @apply bg-[#4b5563] hover:bg-[#6b7280] !important;
+    }
 
 
 }

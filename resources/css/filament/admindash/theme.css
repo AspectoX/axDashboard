@@ -13,6 +13,7 @@
         @apply bg-[#172036] dark:bg-[#172036] shadow-md !important;
     }
     .fi-topbar>nav,
+    .fi-sidebar-nav,
     .fi-sidebar-header{
         @apply bg-[#202938] dark:bg-[#202938] !important;
     }
@@ -20,7 +21,7 @@
         @apply shadow-none ring-0 ring-transparent !important;
     }
     .fi-sidebar-nav{
-        @apply px-0 py-6 overflow-auto !important;
+        @apply px-0 py-6 overflow-auto border-t border-t-white/20 !important;
         scrollbar-gutter:auto;
     }
     .fi-sidebar-nav-groups{
@@ -28,7 +29,7 @@
     }
 
     .fi-sidebar-item>.fi-sidebar-item-button{
-        @apply px-4 rounded-none hover:bg-[#202938]/10 hover:dark:bg-[#202938]/10 hover:bg-white/10 hover:dark:bg-white/10 !important;
+        @apply px-4 rounded-none hover:bg-[#202938]/[0.1] hover:dark:bg-[#202938]/[0.1] hover:bg-white/10 hover:dark:bg-white/10 !important;
     }
     .fi-sidebar-item>.fi-sidebar-item-button>.fi-sidebar-item-label,
     .fi-sidebar-item>.fi-sidebar-item-button>.fi-sidebar-item-icon{
@@ -50,10 +51,11 @@
         @apply pt-0 !important;
     }
     .fi-header{
-        @apply bg-[#202938] dark:bg-[#202938] border-t border-white/20 px-4 py-2 shadow-md !important;
+        @apply bg-[#9ca3af] dark:bg-[#374151] border-t border-t-white/20 px-4 py-2 !important;
     }
+    .fi-breadcrumbs-item-separator,
     .fi-header>div>h1{
-        @apply text-white/50 dark:text-white/50 !important;
+        @apply text-black/50 dark:text-white/50 !important;
     }
 
     .main-content{
@@ -61,7 +63,43 @@
     }
 
     .fi-section{
-        @apply bg-gray-200 dark:bg-[#202938]/50 shadow-md !important;
+        @apply bg-gray-300 dark:bg-[#202938]/50 shadow-md !important;
+    }
+
+    .fi-btn{
+        @apply bg-gray-600 dark:bg-gray-700 text-white !important;
+    }
+    .fi-ac>button.ax-btn-save-changes,
+    .fi-ac>button.ax-btn-create{
+        @apply bg-green-800 hover:bg-green-700 !important;
+    }
+    .fi-ac>a.ax-btn-new-source,
+    .fi-ac>a.ax-btn-new-author,
+    .fi-ac>a.ax-btn-new-category,
+    .fi-ac>a.ax-btn-new-user,
+    .fi-ac>a.ax-btn-new-post,
+    .fi-ac>button.ax-btn-create-amp-create-another{
+        @apply bg-sky-800 hover:bg-sky-700 !important;
+    }
+    .fi-btn.ax-btn-close,
+    .fi-ac>button.ax-btn-cancel{
+        @apply bg-yellow-600 hover:bg-yellow-500 !important;
+    }
+    .fi-ac>button.ax-btn-delete{
+        @apply bg-red-800 hover:bg-red-700 !important;
+    }
+    .fi-color-btn-blue>.fi-link-icon{
+        @apply text-sky-400 hover:text-sky-300 !important;
+    }
+    .fi-color-btn-green>.fi-link-icon{
+        @apply text-green-600 hover:text-green-500 !important;
+    }
+    .fi-color-btn-red>.fi-link-icon{
+        @apply text-red-600 hover:text-red-500 !important;
+    }
+
+    .fi-link>span{
+        @apply hidden !important;
     }
 
     .fi-simple-main{
@@ -73,6 +111,9 @@
     .fi-page>section>div{
         @apply bg-gray-200 !important;
     }
+
+
+
     .ax-header{
         @apply w-full bg-[#202938] justify-end !important;
     }

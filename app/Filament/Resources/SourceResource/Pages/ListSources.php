@@ -9,9 +9,9 @@ use App\Filament\Pages\Concerns\HasHeadingIcon;
 
 class ListSources extends ListRecords
 {
-    protected static string $resource = SourceResource::class;
-
     use HasHeadingIcon;
+
+    protected static string $resource = SourceResource::class;
 
     public function getHeading(): string
     {

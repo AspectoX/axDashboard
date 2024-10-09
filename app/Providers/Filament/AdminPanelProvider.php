@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            ->login(([\Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::class, 'create']))
             ->colors([
                 'primary' => Color::Gray,
             ])

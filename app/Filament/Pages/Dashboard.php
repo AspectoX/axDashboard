@@ -8,9 +8,12 @@ use Filament\Facades\Filament;
 use Filament\Widgets\WidgetConfiguration;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Contracts\Support\Htmlable;
+use App\Filament\Pages\Concerns\HasHeadingIcon;
 
 class Dashboard extends Page
 {
+    use HasHeadingIcon;
+
     protected static string $routePath = '/';
 
     protected static ?int $navigationSort = -2;
@@ -19,6 +22,15 @@ class Dashboard extends Page
      * @var view-string
      */
     protected static string $view = 'filament-panels::pages.dashboard';
+
+
+    public function getHeading(): string
+    {
+        return $this->getHeadingWithIcon(
+            heading: 'Dashboard',
+            icon: 'icon-tachometer-alt',
+        );
+    }
 
     public static function getNavigationLabel(): string
     {

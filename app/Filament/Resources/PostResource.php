@@ -23,12 +23,20 @@ use App\Filament\Resources\PostResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PostResource\RelationManagers;
 
+
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
     protected static ?string $navigationGroup = "Articles";
     protected static ?string $navigationIcon = 'icon-newspaper';
     protected static ?int $navigationSort = 1;
+
+    protected static array $statuses =[
+        'Draft' => 'Draft',
+        'Published' => 'Published',
+        'Deleted' => 'Deleted',
+    ];
+
 
     public static function form(Form $form): Form
     {
@@ -48,7 +56,7 @@ class PostResource extends Resource
                         ->relationship('author', 'name')
                         ->columnSpan(2),
                     Select::make('status')
-                        ->options(['Draft','Published','Deleted'])
+                        ->options(self::$statuses)
                         ->columnSpan(2),
                     Toggle::make('features')
                         ->columnSpan(2),

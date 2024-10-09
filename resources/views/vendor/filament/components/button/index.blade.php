@@ -51,7 +51,7 @@
 
     $buttonClasses = \Illuminate\Support\Arr::toCssClasses([
         ...[
-            'fi-btn relative grid-flow-col items-center justify-center font-semibold outline-none transition duration-75 focus-visible:ring-2',
+            'fi-btn ax-btn-'. Str::slug($slot) .' relative grid-flow-col items-center justify-center font-semibold outline-none transition duration-75 focus-visible:ring-2',
             'pointer-events-none opacity-70' => $disabled,
             'rounded-lg' => ! $grouped,
             'flex-1 [&:nth-child(1_of_.fi-btn)]:rounded-s-lg [&:nth-last-child(1_of_.fi-btn)]:rounded-e-lg [&:not(:nth-child(1_of_.fi-btn))]:shadow-[-1px_0_0_0_theme(colors.gray.200)] [&:not(:nth-last-child(1_of_.fi-btn))]:me-px dark:[&:not(:nth-child(1_of_.fi-btn))]:shadow-[-1px_0_0_0_theme(colors.white/20%)]' => $grouped,
