@@ -2,70 +2,159 @@
 
 @config 'tailwind.config.js';
 
-
-/* Claro = #dfe4ec Medio = #202938 Oscuro = #111828 */
-
 @layer components {
-    .fi-body{
-        @apply bg-[#dfe4ec] dark:bg-[#111828] text-black/75 dark:text-white/75 !important;
+    /* BODY */
+    .ax-body{
+        @apply text-black/75 dark:text-white/75 !important;
     }
-    aside.fi-sidebar{
-        @apply bg-[#172036] dark:bg-[#172036] shadow-md !important;
+
+    /* LAYOUT */
+    .ax-layout{}
+
+    .ax-main-ctn{}
+
+    /* TOPBAR */
+    .ax-topbar{
+        @apply bg-axDark dark:bg-axDark !important;
     }
-    .fi-topbar>nav,
-    .fi-sidebar-nav,
-    .fi-sidebar-header{
-        @apply bg-[#202938] dark:bg-[#202938] !important;
+    .ax-topbar-nav{}
+    .ax-global-search{
+        @apply bg-white/50 rounded-lg !important;
     }
-    .fi-topbar>nav{
-        @apply shadow-none ring-0 ring-transparent !important;
+    .fi-input-wrp{
+        @apply bg-white dark:bg-white ring-0 ring-transparent dark:ring-transparent !important
     }
-    .fi-sidebar-nav{
-        @apply px-0 py-6 overflow-auto border-t border-t-white/20 !important;
-        scrollbar-gutter:auto;
+    .choices__item>div>div>small,
+    .choices__item>div>div>div>svg,
+    .fi-input,.fi-select-input,textarea{
+        @apply text-black dark:text-black !important;
     }
-    .fi-sidebar-nav-groups{
+    .choices__item>div>div>div>svg
+
+    /* SIDEBAR */
+    .ax-main-sidebar,
+    .ax-sidebar-header{
+        @apply bg-axDark-medium dark:bg-axDark-medium !important;
+    }
+
+    /* SIDEBAR NAV */
+    .ax-sidebar-nav{
+        @apply bg-axDark-medium dark:bg-axDark-medium px-0 py-6 !important;
+    }
+    .ax-sidebar-nav-groups{
         @apply -mx-0 !important;
     }
-
-    .fi-sidebar-item>.fi-sidebar-item-button{
-        @apply px-4 rounded-none hover:bg-[#202938]/[0.1] hover:dark:bg-[#202938]/[0.1] hover:bg-white/10 hover:dark:bg-white/10 !important;
+    .ax-sidebar-nav-groups>.ax-sidebar-group>.ax-sidebar-group-items>.ax-sidebar-item>.ax-sidebar-item-button{
+        @apply pl-4 !important;
     }
-    .fi-sidebar-item>.fi-sidebar-item-button>.fi-sidebar-item-label,
-    .fi-sidebar-item>.fi-sidebar-item-button>.fi-sidebar-item-icon{
-        @apply text-white/40 dark:text-white/40 !important;
+    .ax-sidebar-group-items{
+        @apply gap-0 px-0 !important;
     }
-    .fi-sidebar-item.fi-active>.fi-sidebar-item-button{
-        @apply bg-white/5 dark:bg-white/5 hover:bg-white/10 hover:dark:bg-white/10 !important;
+    /* .ax-sidebar-nav-groups>.ax-sidebar-group>.ax-sidebar-group-items>.ax-sidebar-item>.ax-sidebar-item-button{
+        @apply pl-8 !important;
+    } */
+    .ax-sidebar-group-label{
+        @apply uppercase font-bold !important;
+    }
+    .ax-sidebar-item-button{
+        @apply px-4 rounded-none !important;
+    }
+    .ax-sidebar-item>a{
+        @apply bg-transparent dark:bg-transparent hover:bg-white/50 hover:dark:bg-white/50 !important;
+    }
+    .ax-sidebar-item.ax-active>a{
+        @apply bg-white/10 dark:bg-white/10 !important;
+    }
+    .ax-sidebar-item-icon,
+    .ax-sidebar-item-label{
+        @apply text-white/60 dark:text-white/60 !important;
     }
 
-
-
-    .fi-main{
-        @apply mx-0 px-0 md:px-0 lg:px-0 max-w-full !important;
+    /* MAIN */
+    .ax-main{
+        @apply mx-0 px-0 md:px-0 lg:px-0 max-w-full bg-axNormal dark:bg-axLight !important;
     }
     .fi-page{
         @apply px-0 !important;
     }
-    .fi-page>section{
+    .ax-page>section{
         @apply pt-0 !important;
     }
-    .fi-header{
-        @apply bg-[#9ca3af] dark:bg-[#374151] border-t border-t-white/20 px-4 py-2 !important;
-    }
-    .fi-breadcrumbs-item-separator,
-    .fi-header>div>h1{
-        @apply text-black/50 dark:text-white/50 !important;
+    .ax-page>section>div{
+        @apply px-8 !important;
     }
 
-    .main-content{
-        @apply p-6 bg-transparent dark:bg-[#111828] min-h-screen !important;
-    }
+    .main-content{}
 
     .fi-section{
-        @apply bg-gray-300 dark:bg-[#202938]/50 shadow-md !important;
+        @apply bg-axMedium dark:bg-axMedium !important;
+    }
+    .fi-section-content>div>div>a>svg,
+    .fi-section-content>div>div>a>span,
+    .fi-section-content>div>div>p,
+    .fi-section-content>div>div>h2{
+        @apply text-white/60 dark:text-white/60 !important
     }
 
+
+    /* HEADER */
+    .ax-header{
+        @apply w-full bg-axDark-light dark:bg-axDark-light !important;
+    }
+    .ax-header>div{
+        @apply max-w-full block my-4 mx-8 !important;
+    }
+    .ax-breadcrumbs-item-separator,
+    .ax-header>div>h1{
+        @apply text-white/70 dark:text-white/70 !important;
+    }
+
+
+
+    /* USERS MENU */
+    .ax-form-admin,
+    form>.ax-form-admin{
+        @apply bg-gray-800 dark:bg-gray-800 !important;
+    }
+    .ax-dropdown{
+        @apply bg-[#dfe4ec] dark:bg-[#202938] dark:shadow-md dark:border dark:border-gray-200 !important;
+    }
+
+    /* TABLAS */
+    .fi-ta-table>tbody{
+        @apply border-y border-gray-500 dark:border-gray-500 !important;
+    }
+    .fi-ta-table>thead>tr{
+        @apply bg-black/30 dark:bg-black/30 border-y border-gray-500 dark:border-gray-500 !important;
+    }
+    .fi-ta-header-cell-label,
+    .fi-ta-text-item-label,
+    .fi-pagination-overview{
+        @apply text-white/50 !important;
+    }
+    .fi-ta-ctn{
+        @apply shadow-lg dark:shadow-md border border-gray-700 bg-axMedium dark:bg-axMedium !important;
+    }
+    .fi-ta-row{
+        @apply hover:bg-white/10 hover:dark:bg-white/10 border-b border-gray-500 dark:border-b dark:border-gray-500 !important;
+    }
+    .fi-ta-col-wrp>a>.filament-icon-picker-icon-column>svg{
+        @apply text-white/50 dark:text-white/50 !important;
+    }
+    .fi-badge.fi-color-success{
+        @apply bg-green-200/80 dark:bg-green-200/80 text-green-700 dark:text-green-700 !important
+    }
+    .fi-badge.fi-color-warning{
+        @apply bg-yellow-200/80 dark:bg-yellow-200/80 text-yellow-700 dark:text-yellow-700 !important
+    }
+    .fi-badge.fi-color-danger{
+        @apply bg-red-200/80 dark:bg-red-200/80 text-red-700 dark:text-red-700 !important
+    }
+    .fi-fo-field-wrp-label>span{
+        @apply text-white/50 dark:text-white/50 !important;
+    }
+
+   /* BUTTON */
     .fi-btn{
         @apply bg-gray-600 dark:bg-gray-700 text-white !important;
     }
@@ -97,48 +186,7 @@
     .fi-color-btn-red>.fi-link-icon{
         @apply text-red-600 hover:text-red-500 !important;
     }
-
     .fi-link>span{
         @apply hidden !important;
-    }
-
-    .fi-simple-main{
-        @apply rounded-none ring-0 sm:rounded-none sm:max-w-full sm:p-0 !important;
-    }
-    .fi-page>section{
-        @apply gap-y-0 !important;
-    }
-    .fi-page>section>div{
-        @apply bg-gray-200 !important;
-    }
-
-
-
-    .ax-header{
-        @apply w-full bg-[#202938] justify-end !important;
-    }
-    .ax-header>div{
-        @apply max-w-full block my-4 mx-8 !important;
-    }
-    .ax-form-admin,
-    form>.ax-form-admin{
-        @apply bg-gray-800 dark:bg-gray-800 !important;
-    }
-    .ax-dropdown{
-        @apply bg-[#dfe4ec] dark:bg-[#202938] dark:shadow-md dark:border dark:border-gray-200 !important;
-    }
-
-    /* TABLAS */
-    .fi-ta-ctn{
-        @apply shadow-md border border-gray-200 !important;
-    }
-    .fi-ta-header-toolbar{
-        @apply border-b border-gray-200 !important;
-    }
-    .fi-ta-content, table.fi-ta-table{
-        @apply divide-gray-300 !important;
-    }
-    nav.fi-pagination{
-        @apply border-t border-gray-300 !important;
     }
 }

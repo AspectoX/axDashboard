@@ -6,7 +6,7 @@
 ])
 
 <header
-    {{ $attributes->class(['fi-header flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between']) }}
+    {{ $attributes->class(['ax-header flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between']) }}
 >
     <div>
         @if ($breadcrumbs)
@@ -17,14 +17,14 @@
         @endif
 
         <h1
-            class="text-2xl font-bold tracking-tight fi-header-heading text-gray-950 dark:text-white sm:text-3xl"
+            class="text-2xl font-bold tracking-tight fi-header-heading sm:text-3xl"
         >
             {!! $heading !!}
         </h1>
 
         @if ($subheading)
             <p
-                class="max-w-2xl mt-2 text-lg text-gray-600 fi-header-subheading dark:text-gray-400"
+                class="max-w-2xl mt-2 text-lg fi-header-subheading"
             >
                 {{ $subheading }}
             </p>

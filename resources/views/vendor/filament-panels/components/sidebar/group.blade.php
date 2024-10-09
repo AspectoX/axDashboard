@@ -18,8 +18,8 @@
     data-group-label="{{ $subNavigation ? "sub_navigation_{$label}" : $label }}"
     {{
         $attributes->class([
-            'fi-sidebar-group flex flex-col gap-y-1',
-            'fi-active' => $active,
+            'ax-sidebar-group flex flex-col gap-y-1',
+            'ax-active' => $active,
         ])
     }}
 >
@@ -35,19 +35,19 @@
                 x-transition:enter-end="opacity-100"
             @endif
             @class([
-                'fi-sidebar-group-button flex items-center gap-x-3 px-2 py-2',
+                'ax-sidebar-group-button flex items-center gap-x-3 px-2 py-2',
                 'cursor-pointer' => $collapsible,
             ])
         >
             @if ($icon)
                 <x-filament::icon
                     :icon="$icon"
-                    class="fi-sidebar-group-icon h-6 w-6 text-gray-400 dark:text-gray-500"
+                    class="w-6 h-6 text-gray-400 ax-sidebar-group-icon dark:text-gray-500"
                 />
             @endif
 
             <span
-                class="fi-sidebar-group-label flex-1 text-sm font-medium leading-6 text-gray-500 dark:text-gray-400"
+                class="flex-1 text-sm font-medium leading-6 text-gray-500 ax-sidebar-group-label dark:text-gray-400"
             >
                 {{ $label }}
             </span>
@@ -60,7 +60,7 @@
                     :label="$label"
                     x-bind:aria-expanded="! $store.sidebar.groupIsCollapsed(label)"
                     x-on:click.stop="$store.sidebar.toggleCollapsedGroup(label)"
-                    class="fi-sidebar-group-collapse-button"
+                    class="ax-sidebar-group-collapse-button"
                     x-bind:class="{ '-rotate-180': $store.sidebar.groupIsCollapsed(label) }"
                 />
             @endif
@@ -86,7 +86,7 @@
                               }
                     "
                     x-tooltip.html="tooltip"
-                    class="relative flex flex-1 items-center justify-center gap-x-3 rounded-lg px-2 py-2 outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5"
+                    class="relative flex items-center justify-center flex-1 px-2 py-2 transition duration-75 rounded-lg outline-none gap-x-3 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5"
                 >
                     <x-filament::icon
                         :icon="$icon"
@@ -172,7 +172,7 @@
             x-transition:enter-start="opacity-0"
             x-transition:enter-end="opacity-100"
         @endif
-        class="fi-sidebar-group-items flex flex-col gap-y-1"
+        class="flex flex-col ax-sidebar-group-items gap-y-1"
     >
         @foreach ($items as $item)
             @php

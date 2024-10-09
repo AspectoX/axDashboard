@@ -1,7 +1,7 @@
 <div
     x-data="{}"
     x-on:focus-first-global-search-result.stop="$el.querySelector('.fi-global-search-result-link')?.focus()"
-    class="fi-global-search flex items-center"
+    class="flex items-center ax-global-search"
 >
     {{ \Filament\Support\Facades\FilamentView::renderHook(\Filament\View\PanelsRenderHook::GLOBAL_SEARCH_START) }}
 

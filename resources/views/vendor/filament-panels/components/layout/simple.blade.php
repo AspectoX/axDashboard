@@ -9,7 +9,7 @@
         'subheading' => null,
     ])
 
-    <div class="flex flex-col items-center min-h-screen fi-simple-layout">
+    <div class="flex flex-col items-center min-h-screen ax-simple-layout">
         @if (($hasTopbar ?? true) && filament()->auth()->check())
             <div
                 class="absolute top-0 flex h-16 gap-x-4 ax-header"
@@ -23,11 +23,11 @@
         @endif
 
         <div
-            class="flex items-center justify-center flex-grow w-full fi-simple-main-ctn"
+            class="flex items-center justify-center flex-grow w-full ax-simple-main-ctn"
         >
             <main
                 @class([
-                    'fi-simple-main my-16 w-full bg-white px-6 py-12 shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10 sm:rounded-xl sm:px-12',
+                    'ax-simple-main my-16 w-full px-6 py-12 sm:rounded-xl sm:px-12',
                     match ($maxWidth ?? null) {
                         MaxWidth::ExtraSmall, 'xs' => 'sm:max-w-xs',
                         MaxWidth::Small, 'sm' => 'sm:max-w-sm',

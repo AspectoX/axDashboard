@@ -11,13 +11,6 @@ export default {
         './vendor/awcodes/filament-curator/resources/**/*.blade.php',
     ],
     theme: {
-        colors: {
-            'axDark': '#312E81',
-            'axDark-light': '#45428D',
-            'axMedium': '#818cf8',
-            'axNormal': '#A5B4FC',
-            'axLight': '#E0E7FF',
-        },
         screens: {
             sm: '480px',
             md: '768px',
@@ -29,6 +22,14 @@ export default {
             serif: ['Merriweather', 'serif'],
         },
         extend: {
+            colors:{
+                'axDark': '#0C0337',
+                'axDark-medium': '#1C1736',
+                'axDark-light': '#423F53',
+                'axMedium': '#2A2832',
+                'axNormal': '#E1DEEB',
+                'axLight': '#1C1C1C',
+            },
             spacing: {
                 '128': '32rem',
                 '144': '36rem',

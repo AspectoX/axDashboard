@@ -13,7 +13,7 @@
 <div
     {{
         $attributes->class([
-            'fi-page',
+            'ax-page',
             'h-full' => $fullHeight,
         ])
     }}
@@ -96,7 +96,7 @@
             <div
                 @class([
                     'grid flex-1 auto-cols-fr gap-y-8',
-                    'main-content',
+                    'ax-main-content',
                     'h-full' => $fullHeight,
                 ])
             >
@@ -107,7 +107,7 @@
                         :columns="$this->getHeaderWidgetsColumns()"
                         :data="$widgetData"
                         :widgets="$headerWidgets"
-                        class="fi-page-header-widgets"
+                        class="ax-page-header-widgets"
                     />
                 @endif
 
@@ -122,7 +122,7 @@
                         :columns="$this->getFooterWidgetsColumns()"
                         :data="$widgetData"
                         :widgets="$footerWidgets"
-                        class="fi-page-footer-widgets"
+                        class="ax-page-footer-widgets"
                     />
                 @endif
 

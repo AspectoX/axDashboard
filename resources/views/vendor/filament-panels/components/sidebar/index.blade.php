@@ -3,7 +3,7 @@
 ])
 
 @php
-    $openSidebarClasses = 'fi-sidebar-open w-[--sidebar-width] translate-x-0 shadow-xl ring-1 ring-gray-950/5 dark:ring-white/10 rtl:-translate-x-0';
+    $openSidebarClasses = 'fi-sidebar-open w-[--sidebar-width] translate-x-0 shadow-xl rtl:-translate-x-0';
     $isRtl = __('filament-panels::layout.direction') === 'rtl';
 @endphp
 
@@ -35,7 +35,7 @@
     @endif
     {{
         $attributes->class([
-            'fi-sidebar fixed inset-y-0 start-0 z-30 flex flex-col h-screen content-start bg-white transition-all dark:bg-gray-900 lg:z-0 lg:bg-transparent lg:shadow-none lg:ring-0 lg:transition-none dark:lg:bg-transparent',
+            'ax-sidebar fixed inset-y-0 start-0 z-30 flex flex-col h-screen content-start transition-all lg:z-0 lg:bg-transparent lg:shadow-none lg:ring-0 lg:transition-none dark:lg:bg-transparent',
             'lg:translate-x-0 rtl:lg:-translate-x-0' => ! (filament()->isSidebarCollapsibleOnDesktop() || filament()->isSidebarFullyCollapsibleOnDesktop() || filament()->hasTopNavigation()),
             'lg:-translate-x-full rtl:lg:translate-x-full' => filament()->hasTopNavigation(),
         ])
@@ -43,7 +43,7 @@
 >
     <div class="overflow-x-clip">
         <header
-            class="flex items-center h-16 px-6 bg-white fi-sidebar-header ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10 lg:shadow-sm"
+            class="flex items-center h-16 px-6 ax-sidebar-header lg:shadow-sm"
         >
             <div
                 @if (filament()->isSidebarCollapsibleOnDesktop())
@@ -97,7 +97,7 @@
     </div>
 
     <nav
-        class="flex flex-col flex-grow px-6 py-8 overflow-x-hidden overflow-y-auto fi-sidebar-nav gap-y-7"
+        class="flex flex-col flex-grow px-6 py-8 overflow-x-hidden overflow-y-auto ax-sidebar-nav gap-y-7"
         style=""
     >
         {{ \Filament\Support\Facades\FilamentView::renderHook(\Filament\View\PanelsRenderHook::SIDEBAR_NAV_START) }}
@@ -105,7 +105,7 @@
         @if (filament()->hasTenancy() && filament()->hasTenantMenu())
             <div
                 @class([
-                    'fi-sidebar-nav-tenant-menu-ctn',
+                    'ax-sidebar-nav-tenant-menu-ctn',
                     '-mx-2' => ! filament()->isSidebarCollapsibleOnDesktop(),
                 ])
                 @if (filament()->isSidebarCollapsibleOnDesktop())
@@ -116,7 +116,7 @@
             </div>
         @endif
 
-        <ul class="flex flex-col -mx-2 fi-sidebar-nav-groups gap-y-7">
+        <ul class="flex flex-col -mx-2 ax-sidebar-nav-groups gap-y-7">
             @foreach ($navigation as $group)
                 <x-filament-panels::sidebar.group
                     :active="$group->isActive()"
@@ -151,7 +151,7 @@
             )
 
             document
-                .querySelectorAll('.fi-sidebar-group')
+                .querySelectorAll('.ax-sidebar-group')
                 .forEach((group) => {
                     if (
                         !collapsedGroups.includes(group.dataset.groupLabel)
@@ -162,10 +162,10 @@
                     // Alpine.js loads too slow, so attempt to hide a
                     // collapsed sidebar group earlier.
                     group.querySelector(
-                        '.fi-sidebar-group-items',
+                        '.ax-sidebar-group-items',
                     ).style.display = 'none'
                     group
-                        .querySelector('.fi-sidebar-group-collapse-button')
+                        .querySelector('.ax-sidebar-group-collapse-button')
                         .classList.add('rotate-180')
                 })
         </script>
