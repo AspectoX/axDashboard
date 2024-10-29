@@ -30,24 +30,26 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login(([\Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::class, 'create']))
             ->colors([
-                'primary' => Color::Gray,
+                'primary' => Color::Zinc,
             ])
-            ->viteTheme('resources/css/filament/admindash/theme.css')
-            ->sidebarWidth('13.75rem')
+            //->viteTheme('resources/css/filament/admindash/theme.css')
+            ->viteTheme('resources/css/filament/axdashboard/theme.css')
+            //->sidebarWidth('13.75rem')
+            ->topNavigation()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
             ->profile()
-            ->renderHook(
-                'panels::body.end',
-                fn () => view('NavFooter'),
-            )
-            ->renderHook(
-                PanelsRenderHook::USER_MENU_AFTER,
-                fn () => view('navTopProfile'),
-            )
+            // ->renderHook(
+            //     'panels::body.end',
+            //     fn () => view('NavFooter'),
+            // )
+            // ->renderHook(
+            //     PanelsRenderHook::USER_MENU_AFTER,
+            //     fn () => view('navTopProfile'),
+            // )
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,

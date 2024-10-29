@@ -7,6 +7,7 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/css/filament/admindash/theme.css',
+                'resources/css/filament/axdashboard/theme.css',
                 'resources/js/app.js'
             ],
             refresh: [

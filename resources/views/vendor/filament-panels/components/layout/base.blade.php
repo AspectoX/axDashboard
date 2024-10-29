@@ -123,7 +123,7 @@
                 ->merge(($livewire ?? null)?->getExtraBodyAttributes() ?? [], escape: false)
                 ->class([
                     'ax-body',
-                    'ax-panel-' . filament()->getId(),
+                    'fi-panel-' . filament()->getId(),
                     'min-h-screen font-normal antialiased',
                 ]) }}
     >
