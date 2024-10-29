@@ -47,7 +47,7 @@
         @endif
 
         @if (filament()->hasTopNavigation() || (! filament()->hasNavigation()))
-            <div class="hidden me-6 lg:flex">
+            <div class="hidden ax-logo me-6 lg:flex">
                 @if ($homeUrl = filament()->getHomeUrl())
                     <a {{ \Filament\Support\generate_href_html($homeUrl) }}>
                         <x-filament-panels::logo />

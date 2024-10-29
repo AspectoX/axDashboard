@@ -13,8 +13,20 @@
         @apply bg-zinc-500 dark:bg-zinc-800 !important;
     }
 
-    div.navbar-top{
-        @apply w-full bg-zinc-500 dark:bg-zinc-800 py-2 px-4 mb-4 !important;
+    .ax-logo{
+        @apply h-16 pr-4 border-r-4 border-zinc-100 dark:border-zinc-900 items-center !important;
+    }
+
+    .ax-global-search{
+        @apply h-16 border-l-4 pl-4 border-zinc-100 dark:border-zinc-900 !important;
+    }
+
+    .navbar-top{
+        @apply w-full bg-zinc-500 dark:bg-zinc-800 px-8 mt-4 !important;
+    }
+
+    .navbar-top>ul{
+        @apply w-auto lg:flex-1 border-r-4 border-zinc-100 dark:border-zinc-900 !important;
     }
 
     /* MAIN */

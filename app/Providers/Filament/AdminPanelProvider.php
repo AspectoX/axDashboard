@@ -46,10 +46,10 @@ class AdminPanelProvider extends PanelProvider
             //     'panels::body.end',
             //     fn () => view('NavFooter'),
             // )
-            // ->renderHook(
-            //     PanelsRenderHook::USER_MENU_AFTER,
-            //     fn () => view('navTopProfile'),
-            // )
+            ->renderHook(
+                PanelsRenderHook::USER_MENU_AFTER,
+                fn () => view('navTopProfile'),
+            )
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,

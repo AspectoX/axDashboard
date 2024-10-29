@@ -1,7 +1,7 @@
 <div class="p-2.5 pb-0 mb-2 before:absolute before:top-16 before:bottom-0 before:left-0 before:right-0 before:bg-no-repeat before:bg-[url('images/2816.png')]">
     <div class="nav-profile-left">
         <a href="{{ route('profile.show') }}" class="profile-photo">
-            <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
+            <img src="{{ asset(Auth::user()->profile_photo_url) }}" alt="{{ Auth::user()->name }}">
         </a>
     </div>
     <div class="nav-profile-right">
