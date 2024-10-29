@@ -28,7 +28,7 @@
                 {{ __('Profile') }}
             </x-dropdown-link>
 
-            <div class="border-t border-gray-200 dark:border-gray-600"></div>
+            <div class="border-t border-gray-200 dark:border-gray-600 separator"></div>
 
             @if (filament()->hasDarkMode() && (! filament()->hasDarkModeForced()))
                 <x-filament::dropdown.list>
@@ -36,7 +36,7 @@
                 </x-filament::dropdown.list>
             @endif
 
-            <div class="border-t border-gray-200 dark:border-gray-600"></div>
+            <div class="border-t border-gray-200 dark:border-gray-600 separator"></div>
 
             <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}" x-data>
