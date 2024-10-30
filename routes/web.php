@@ -1,17 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Session\Middleware\AuthenticateSession;
+use Laravel\Jetstream\Http\Controllers\TeamInvitationController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::redirect('/login', '/admin/login')->name('login');
+
+Route::redirect('/register', '/admin/register')->name('register');
+
+Route::redirect('/dashboard', '/admin')->name('admin');
+
+Route::get('/team-invitations/{invitation}', [TeamInvitationController::class, 'accept'])
+    ->middleware(['signed', 'verified', 'auth', AuthenticateSession::class])
+    ->name('team-invitations.accept');
