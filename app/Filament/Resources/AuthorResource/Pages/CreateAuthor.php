@@ -17,7 +17,7 @@ class CreateAuthor extends CreateRecord
     {
         return $this->getHeadingWithIcon(
             heading: 'Author create',
-            icon: 'icon-user-edit',
+            icon: 'icon-id-card',
         );
     }
 }

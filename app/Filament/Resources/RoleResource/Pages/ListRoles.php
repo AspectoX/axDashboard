@@ -1,26 +1,27 @@
 <?php
 
-namespace App\Filament\Resources\AuthorResource\Pages;
+namespace BezhanSalleh\FilamentShield\Resources\RoleResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use App\Filament\Resources\AuthorResource;
 use App\Filament\Pages\Concerns\HasHeadingIcon;
+use BezhanSalleh\FilamentShield\Resources\RoleResource;
 
-class ListAuthors extends ListRecords
+class ListRoles extends ListRecords
 {
     use HasHeadingIcon;
 
-    protected static string $resource = AuthorResource::class;
+    protected static string $resource = RoleResource::class;
 
     public function getHeading(): string
     {
         return $this->getHeadingWithIcon(
-            heading: 'Authors',
-            icon: 'icon-id-card',
+            heading: 'List Roles',
+            icon: 'icon-shield-check',
         );
     }
-    protected function getHeaderActions(): array
+
+    protected function getActions(): array
     {
         return [
             Actions\CreateAction::make(),

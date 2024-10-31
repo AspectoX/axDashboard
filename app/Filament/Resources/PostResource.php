@@ -13,11 +13,14 @@ use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Textarea;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Tables\Actions\DeleteAction;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\PostResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -173,7 +176,15 @@ class PostResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                ViewAction::make()
+                    ->tooltip('View')
+                    ->color('btn-blue'),
+                EditAction::make()
+                    ->tooltip('Edit')
+                    ->color('btn-green'),
+                DeleteAction::make()
+                    ->tooltip('Delete')
+                    ->color('btn-red'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

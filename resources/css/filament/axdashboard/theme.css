@@ -48,8 +48,20 @@
         @apply bg-zinc-300 dark:bg-zinc-700 border-b-4 border-red-900 !important;
     }
 
-    .ax-dropdown{
+    .fi-dropdown-panel{
         @apply bg-zinc-200 dark:bg-zinc-800 shadow-md border border-zinc-300 dark:border-zinc-700 !important;
+    }
+    .fi-dropdown-header{
+        @apply py-4 rounded-none border-b border-zinc-400/50 dark:border-zinc-700 uppercase text-xs items-center !important;
+    }
+    .fi-dropdown-list{
+        @apply p-0 !important;
+    }
+    .fi-dropdown-list-item{
+        @apply py-4 rounded-none border-t border-zinc-400/50 dark:border-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-700 hover:last:rounded-b-lg hover:first:rounded-t-lg !important;
+    }
+    .fi-theme-switcher-btn{
+        @apply rounded-none !important;
     }
     .separator{
         @apply border-t border-zinc-400/50 dark:border-zinc-700 !important;

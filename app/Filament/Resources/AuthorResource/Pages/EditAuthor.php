@@ -17,7 +17,7 @@ class EditAuthor extends EditRecord
     {
         return $this->getHeadingWithIcon(
             heading: 'Author edit',
-            icon: 'icon-user-edit',
+            icon: 'icon-id-card',
         );
     }
 
