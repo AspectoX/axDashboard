@@ -56,8 +56,6 @@
                     <x-filament-panels::logo />
                 @endif
             </div>
-
-
         @endif
 
         <div

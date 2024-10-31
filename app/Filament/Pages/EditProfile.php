@@ -6,7 +6,7 @@ use Filament\Pages\Page;
 
 class EditProfile extends Page
 {
-    protected static ?string $navigationIcon = 'user-edit';
+    protected static ?string $navigationIcon = 'icon-user-edit';
 
     protected static string $view = 'filament.pages.edit-profile';
 

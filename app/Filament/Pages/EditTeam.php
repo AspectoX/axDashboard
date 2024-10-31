@@ -7,6 +7,8 @@ use Filament\Pages\Tenancy\EditTenantProfile;
 
 class EditTeam extends EditTenantProfile
 {
+    protected static ?string $navigationIcon = 'icon-users-cog';
+
     protected static string $view = 'filament.pages.edit-team';
 
     protected static ?int $navigationSort = 2;

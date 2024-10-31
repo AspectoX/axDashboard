@@ -23,7 +23,7 @@ class SwitchTeam
         if (Features::hasTeamFeatures()) {
             $user = $event->getUser();
 
-            $team = $event->getTenant();
+            //$team = $event->getTenant();
 
             $user->switchTeam($team);
         }

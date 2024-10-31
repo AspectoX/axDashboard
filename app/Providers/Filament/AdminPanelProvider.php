@@ -37,7 +37,7 @@ class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-        return $panel
+        $panel
             ->default()
             ->id('admin')
             ->path('admin')
@@ -48,19 +48,11 @@ class AdminPanelProvider extends PanelProvider
             ->emailVerification()
             ->viteTheme('resources/css/filament/axdashboard/theme.css')
             //->viteTheme('resources/css/filament/admindash/theme.css')
+            ->topNavigation()
+            //->sidebarWidth('13.75rem')
             ->colors([
                 'primary' => Color::Zinc,
             ])
-            ->userMenuItems([
-                MenuItem::make()
-                    ->label('Profile')
-                    ->icon('heroicon-o-user-circle')
-                    ->url(fn () => $this->shouldRegisterMenuItem()
-                        ? url(EditProfile::getUrl())
-                        : url($panel->getPath())),
-            ])
-            //->sidebarWidth('13.75rem')
-            ->topNavigation()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -68,15 +60,18 @@ class AdminPanelProvider extends PanelProvider
                 EditProfile::class,
                 ApiTokens::class,
             ])
-            //->profile(EditProfile::class)
             // ->renderHook(
             //     'panels::body.end',
             //     fn () => view('NavFooter'),
             // )
-            ->renderHook(
-                PanelsRenderHook::USER_MENU_AFTER,
-                fn () => view('navTopProfile'),
-            )
+            ->userMenuItems([
+                MenuItem::make()
+                    ->label('Profile')
+                    ->icon('icon-user')
+                    ->url(fn () => $this->shouldRegisterMenuItem()
+                        ? url(EditProfile::getUrl())
+                        : url($panel->getPath())),
+            ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
@@ -98,33 +93,33 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
 
-        if (Features::hasApiFeatures()) {
-            $panel->userMenuItems([
-                MenuItem::make()
-                    ->label('API Tokens')
-                    ->icon('heroicon-o-key')
-                    ->url(fn () => $this->shouldRegisterMenuItem()
-                        ? url(ApiTokens::getUrl())
-                        : url($panel->getPath())),
-            ]);
-        }
-
-        if (Features::hasTeamFeatures()) {
-            $panel
-                ->tenant(Team::class)
-                ->tenantRegistration(CreateTeam::class)
-                ->tenantProfile(EditTeam::class)
-                ->userMenuItems([
+            if (Features::hasApiFeatures()) {
+                $panel->userMenuItems([
                     MenuItem::make()
-                        ->label('Team Settings')
-                        ->icon('heroicon-o-cog-6-tooth')
+                        ->label('API Tokens')
+                        ->icon('icon-key')
                         ->url(fn () => $this->shouldRegisterMenuItem()
-                            ? url(EditTeam::getUrl())
+                            ? url(ApiTokens::getUrl())
                             : url($panel->getPath())),
                 ]);
-        }
+            }
 
-        return $panel;
+            // if (Features::hasTeamFeatures()) {
+            //     $panel
+            //         ->tenant(Team::class)
+            //         ->tenantRegistration(CreateTeam::class)
+            //         ->tenantProfile(EditTeam::class)
+            //         ->userMenuItems([
+            //             MenuItem::make()
+            //                 ->label('Team Settings')
+            //                 ->icon('icon-users-cog')
+            //                 ->url(fn () => $this->shouldRegisterMenuItem()
+            //                     ? url(EditTeam::getUrl())
+            //                     : url($panel->getPath())),
+            //         ]);
+            // }
+
+            return $panel;
     }
 
     public function boot()

@@ -25,6 +25,10 @@
         @apply h-16 border-l-4 pl-4 border-zinc-100 dark:border-zinc-900 !important;
     }
 
+    .fi-user-menu{
+        @apply ml-2 !important;
+    }
+
     .navbar-top{
         @apply w-full bg-zinc-200 dark:bg-zinc-800 px-8 mt-4 !important;
     }

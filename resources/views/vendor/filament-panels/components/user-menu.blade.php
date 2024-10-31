@@ -14,7 +14,7 @@
 
 {{ \Filament\Support\Facades\FilamentView::renderHook(\Filament\View\PanelsRenderHook::USER_MENU_BEFORE) }}
 
-{{-- <x-filament::dropdown
+<x-filament::dropdown
     placement="bottom-end"
     teleport
     :attributes="
@@ -94,6 +94,6 @@
             {{ $logoutItem?->getLabel() ?? __('filament-panels::layout.actions.logout.label') }}
         </x-filament::dropdown.list.item>
     </x-filament::dropdown.list>
-</x-filament::dropdown> --}}
+</x-filament::dropdown>
 
 {{ \Filament\Support\Facades\FilamentView::renderHook(\Filament\View\PanelsRenderHook::USER_MENU_AFTER) }}
