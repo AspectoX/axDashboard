@@ -17,7 +17,7 @@ class ListUsers extends ListRecords
     {
         return $this->getHeadingWithIcon(
             heading: 'Users',
-            icon: 'icon-users',
+            icon: 'icon-photo-video',
         );
     }
 
