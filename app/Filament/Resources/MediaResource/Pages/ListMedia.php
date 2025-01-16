@@ -39,7 +39,7 @@ class ListMedia extends ManageRecords
     {
         return $this->getHeadingWithIcon(
             heading: 'Media Manager',
-            icon: 'icon-users',
+            icon: 'icon-photo-video',
         );
     }
 

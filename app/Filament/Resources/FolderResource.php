@@ -82,8 +82,8 @@ class FolderResource extends Resource
                     ->label(trans('filament-media-manager::messages.folders.columns.description'))
                     ->columnSpanFull()
                     ->maxLength(255),
-                IconPicker::make('icon')
-                    ->label(trans('filament-media-manager::messages.folders.columns.icon')),
+                // IconPicker::make('icon')
+                //     ->label(trans('filament-media-manager::messages.folders.columns.icon')),
                 Forms\Components\ColorPicker::make('color')
                     ->label(trans('filament-media-manager::messages.folders.columns.color')),
                 Forms\Components\Toggle::make('is_protected')

@@ -108,20 +108,20 @@ class AdminPanelProvider extends PanelProvider
                 ]);
             }
 
-            // if (Features::hasTeamFeatures()) {
-            //     $panel
-            //         ->tenant(Team::class)
-            //         ->tenantRegistration(CreateTeam::class)
-            //         ->tenantProfile(EditTeam::class)
-            //         ->userMenuItems([
-            //             MenuItem::make()
-            //                 ->label('Team Settings')
-            //                 ->icon('icon-users-cog')
-            //                 ->url(fn () => $this->shouldRegisterMenuItem()
-            //                     ? url(EditTeam::getUrl())
-            //                     : url($panel->getPath())),
-            //         ]);
-            // }
+            if (Features::hasTeamFeatures()) {
+                $panel
+                    ->tenant(Team::class)
+                    ->tenantRegistration(CreateTeam::class)
+                    ->tenantProfile(EditTeam::class)
+                    ->userMenuItems([
+                        MenuItem::make()
+                            ->label('Team Settings')
+                            ->icon('icon-users-cog')
+                            ->url(fn () => $this->shouldRegisterMenuItem()
+                                ? url(EditTeam::getUrl())
+                                : url($panel->getPath())),
+                    ]);
+            }
 
             return $panel;
     }

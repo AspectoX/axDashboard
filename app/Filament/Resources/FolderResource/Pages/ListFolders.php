@@ -2,19 +2,31 @@
 
 namespace TomatoPHP\FilamentMediaManager\Resources\FolderResource\Pages;
 
+use Filament\Actions;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
+use Filament\Resources\Pages\ListRecords;
 use Filament\Resources\Pages\ManageRecords;
 use Illuminate\Validation\ValidationException;
-use TomatoPHP\FilamentMediaManager\Models\Folder;
+use App\Filament\Pages\Concerns\HasHeadingIcon;
 use TomatoPHP\FilamentMediaManager\Models\Media;
+use TomatoPHP\FilamentMediaManager\Models\Folder;
 use TomatoPHP\FilamentMediaManager\Resources\FolderResource;
-use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 
 class ListFolders extends ManageRecords
 {
+    use HasHeadingIcon;
+
     protected static string $resource = FolderResource::class;
+
+
+    public function getHeading(): string
+    {
+        return $this->getHeadingWithIcon(
+            heading: 'Media Manager',
+            icon: 'icon-photo-video',
+        );
+    }
 
     protected function getHeaderActions(): array
     {

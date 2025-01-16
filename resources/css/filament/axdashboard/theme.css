@@ -1,133 +1,130 @@
-@import '/vendor/filament/filament/resources/css/theme.css';
+@import "/vendor/filament/filament/resources/css/theme.css";
 
 @config 'tailwind.config.js';
 
 @layer components {
     /* BODY */
-    body{
+    body {
         @apply text-zinc-800 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-900 !important;
     }
 
     /* NAV */
-    nav{
+    nav {
         @apply bg-zinc-200 dark:bg-zinc-800 !important;
     }
 
-    .ax-logo{
+    .ax-logo {
         @apply h-16 pr-4 border-r-4 border-zinc-100 dark:border-zinc-900 items-center !important;
     }
 
-    .ax-topbar{
+    .ax-topbar {
         @apply bg-zinc-100 dark:bg-zinc-900 !important;
     }
 
-    .ax-global-search{
+    .ax-global-search {
         @apply h-16 border-l-4 pl-4 border-zinc-100 dark:border-zinc-900 !important;
     }
 
-    .fi-user-menu{
+    .fi-user-menu {
         @apply ml-2 !important;
     }
 
-    .navbar-top{
+    .navbar-top {
         @apply w-full bg-zinc-200 dark:bg-zinc-800 px-8 mt-4 !important;
     }
 
-    .navbar-top>ul{
+    .navbar-top > ul {
         @apply w-auto lg:inline-flex !important;
     }
-    .navbar-top>ul:last-child{
+    .navbar-top > ul:last-child {
         @apply border-r-4 border-zinc-100 dark:border-zinc-900 !important;
     }
 
-    .fi-topbar-item-button{
+    .fi-topbar-item-button {
         @apply h-12 rounded-none border-b-4 border-zinc-200 dark:border-zinc-800 !important;
     }
 
-    .fi-topbar-item.fi-active.fi-topbar-item-active>.fi-topbar-item-button{
+    .fi-topbar-item.fi-active.fi-topbar-item-active > .fi-topbar-item-button {
         @apply bg-zinc-300 dark:bg-zinc-700 border-b-4 border-red-900 !important;
     }
 
-    .fi-dropdown-panel{
+    .fi-dropdown-panel {
         @apply bg-zinc-200 dark:bg-zinc-800 shadow-md border border-zinc-300 dark:border-zinc-700 !important;
     }
-    .fi-dropdown-header{
+    .fi-dropdown-header {
         @apply py-4 rounded-none border-b border-zinc-400/50 dark:border-zinc-700 uppercase text-xs items-center !important;
     }
-    .fi-dropdown-list{
+    .fi-dropdown-list {
         @apply p-0 !important;
     }
-    .fi-dropdown-list-item{
+    .fi-dropdown-list-item {
         @apply py-4 rounded-none border-t border-zinc-400/50 dark:border-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-700 hover:last:rounded-b-lg hover:first:rounded-t-lg !important;
     }
-    .fi-theme-switcher-btn{
+    .fi-theme-switcher-btn {
         @apply rounded-none !important;
     }
-    .separator{
+    .separator {
         @apply border-t border-zinc-400/50 dark:border-zinc-700 !important;
     }
 
     /* MAIN */
-    main{
+    main {
         @apply max-w-full px-0 !important;
     }
 
-    section{
+    section {
         @apply gap-y-4 py-4 !important;
     }
 
-    section>div{
+    section > div {
         @apply mx-8 !important;
     }
 
     /* NOTIFICATION */
-    .ax-notification svg{
+    .ax-notification svg {
         @apply w-7 h-7 !important;
     }
 
-    .fi-icon-btn-badge-ctn{
+    .fi-icon-btn-badge-ctn {
         @apply left-7 top-2 !important;
     }
 
     /* HEADER */
-    header{
+    header {
         @apply max-w-full px-8 py-2 bg-zinc-200 dark:bg-zinc-800 !important;
     }
 
-    header h1{
+    header h1 {
         @apply text-xl text-zinc-800 dark:text-zinc-500 !important;
     }
 
     /* BUTTONS */
-    button.fi-btn.ax-btn-save-changes,
-    button.fi-btn.ax-btn-create{
+    button.fi-btn.ax-btn-save {
         @apply bg-green-800 hover:bg-green-700 !important;
     }
-    a.fi-btn.ax-btn-new-source,
-    a.fi-btn.ax-btn-new-author,
-    a.fi-btn.ax-btn-new-category,
-    a.fi-btn.ax-btn-new-user,
-    a.fi-btn.ax-btn-new-post,
-    button.fi-btn.ax-btn-create-amp-create-another{
+
+    a.fi-btn.ax-btn-new,
+    button.fi-btn.ax-btn-create,
+    button.fi-btn.ax-btn-new {
         @apply bg-sky-800 hover:bg-sky-700 !important;
     }
     .fi-btn.ax-btn-close,
-    button.fi-btn.ax-btn-cancel{
+    button.fi-btn.ax-btn-cancel {
         @apply bg-yellow-600 hover:bg-yellow-500 !important;
     }
-    button.fi-btn.ax-btn-delete{
+    button.fi-btn.ax-btn-delete {
         @apply bg-red-800 hover:bg-red-700 !important;
     }
-    .fi-color-btn-blue>.fi-link-icon{
+    .fi-color-btn-blue > .fi-link-icon {
         @apply text-sky-400 hover:text-sky-300 !important;
     }
-    .fi-color-btn-green>.fi-link-icon{
+    .fi-color-btn-green > .fi-link-icon {
         @apply text-green-600 hover:text-green-500 !important;
     }
-    .fi-color-btn-red>.fi-link-icon{
+    .fi-color-btn-red > .fi-link-icon {
         @apply text-red-600 hover:text-red-500 !important;
     }
-    .fi-link>span{
+    .fi-link > span {
         @apply hidden !important;
     }
 }
